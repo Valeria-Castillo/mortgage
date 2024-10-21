@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <script src="app.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="form_container">
+          <div class="header_group">
+            <h2>Mortgage Calculator</h2>
+            <button class="limpiar">Clear</button>
+          </div>
+          <form class="form">
+            <div class="form_group">
+              <label for="amount">Mortgage Amount</label>
+              <div class="icon_container amount">
+                <input type="number" id="amount" name="amount" />
+                <h4>&pound;</h4> <!--euro -->
+              </div>
+              <span class="error error_amount"></span>
+            </div>
+
+            <div class="input_group">
+              <div class="form_group">
+                <label for="term">Mortgage Term</label>
+                <div class="icon_container term">
+                  <input type="number" id="term" name="term" />
+                  <h4>years</h4> <!--años-->
+                </div>
+                <span class="error error_term"></span>
+              </div>
+              <div class="form_group">
+                <label for="interest">Interest Rate</label>
+                <div class="icon_container rate">
+                  <input type="number" id="interest" name="interest" step="0.01" />
+                  <h4>%</h4> <!--porcentaje-->
+                </div>
+                <span class="error error_rate"></span>
+              </div>
+            </div>
+
+            <div class="form_group">
+              <p>Mortgage Type</p>
+              <label for="repayment" class="radio">
+                <input type="radio" id="repayment" name="type" value="repayment" />
+                Repayment
+              </label>
+              <label for="interest-only" class="radio">
+                <input type="radio" id="interest-only" name="type" value="interest-only" />
+                Interest Only
+              </label>
+              <span class="error error_type"></span>
+            </div>
+
+            <button class="form_submit" style="padding: 4px 8px; font-size: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="none" viewBox="0 0 24 24">
+                <path
+                  fill="#133041"
+                  d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"
+                />
+              </svg>
+              Do the calculation
+            </button>
+          </form>
+        </div>
+
+        <div class="results_container">
+          <div class="results_guide">
+            <div class="guide-image">
+              <img src="./assets/images/illustration-empty.svg" alt="error imagen resultados" />
+            </div>
+            <div class="results_guide-content">
+              <h2>Results here</h2>
+              <p>Complete the form and click "calculate repayments" to see your monthly repayments.</p>
+            </div>
+          </div>
+
+          <div class="results_complete">
+            <div class="complete-explanation">
+              <h2>Your results</h2>
+              <p>Your results are shown below based on the information provided. Adjust as needed.</p>
+            </div>
+            <div class="complete-total">
+              <p>Your monthly repayments</p>
+              <h3 class="complete-monthly"></h3>
+              <hr />
+              <p>Total you'll repay over the term</p>
+              <h3 class="complete-full"></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
